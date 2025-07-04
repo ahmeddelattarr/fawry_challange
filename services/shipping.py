@@ -7,4 +7,5 @@ class ShippingService:
 			total_weight += weight
 			print(f"{quantity}x {item.get_name():12} {weight * 1000:.0f}g")
 		print(f"Total package weight {total_weight:.1f}kg\n")
+		print()
 		return total_weight * 30

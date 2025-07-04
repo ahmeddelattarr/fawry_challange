@@ -27,3 +27,4 @@ class CheckoutService:
 		print(f"Shipping         {shipping}")
 		print(f"Amount           {total}")
 		print(f"Remaining Balance: {customer.balance}")
+		print("END.")
