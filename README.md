@@ -1,12 +1,12 @@
 ---
 
-## 📦 Fawry Quantum Internship Challenge – E-commerce System
+## Fawry Quantum Internship Challenge – E-commerce System
 
 This repository is a solution to the fawry assesment .
 
 ---
 
-## ✅ Features Implemented
+## Features Implemented
 
 * Define products with:
 
@@ -32,7 +32,7 @@ This repository is a solution to the fawry assesment .
 
 
 
-## 🗂️ Folder Structure
+## Folder Structure
 
 ```
 fawry_challange/
@@ -52,7 +52,7 @@ fawry_challange/
 
 ---
 
-## 🧪 How to Run
+## How to Run
 
 ```bash
 cd fawry_challange
@@ -67,7 +67,7 @@ You will see the console output that includes:
 
 ---
 
-## 📝 Sample Output
+## Sample Output
 
 ```
 [Warning] Expired Cheese is expired. Skipping.
@@ -94,7 +94,7 @@ Remaining Balance: 3297.0
 
 ---
 
-## 📌 Assumptions
+## Assumptions
 
 * Products are rejected from the cart if:
 
