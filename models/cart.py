@@ -4,12 +4,16 @@ class Cart:
 		self.items = {}
 
 	def add(self,product,quantity):
-		if product.is_expired():
-			raise Exception(f"{product.name} is expired and cannot be added to the cart.")
-		if quantity > product.quantity:
-			raise Exception(f"Cannot add {quantity} of {product.name}. Only {product.quantity} available.")
-
-		self.items[product]=quantity
+		try:
+			if product.is_expired():
+				print(f"[Warning] {product.name} is expired. Skipping.")
+				return
+			if quantity > product.quantity:
+				print(f"[Warning] Not enough stock for {product.name}. Skipping.")
+				return
+			self.items[product] = quantity
+		except Exception as e:
+			print(f"[Error] Failed to add {product.name}: {e}")
 
 	def is_empty(self):
 		return len(self.items) == 0

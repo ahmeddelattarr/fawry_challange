@@ -1,4 +1,4 @@
-from models.shippable_product import shippable
+from models.shippable_product import Shippable
 from .shipping import ShippingService
 
 class CheckoutService:
@@ -11,7 +11,7 @@ class CheckoutService:
 
 		subtotal = cart.get_subtotal()
 		shippable_items = cart.get_shippable_items()
-		shipping= self.shipping_service.ship(shippable_items, cart) if shippable_items else 0
+		shipping = self.shipping_service.ship(shippable_items) if shippable_items else 0
 		total = subtotal + shipping
 
 		if customer.balance < total:
