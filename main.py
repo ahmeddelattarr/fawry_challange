@@ -20,12 +20,12 @@ class NonShippableExpirableProduct(ExpirableProduct):
         return False
 
 # --- Define Products ---
-expired_cheese = ShippableExpirableProduct("Expired Cheese", 100, 5, 0.2, date(2023, 1, 1))  # ❌ expired
-cheese = ShippableExpirableProduct("Cheese", 100, 5, 0.2, date.today() + timedelta(days=10))  # ✅
-biscuits = ShippableExpirableProduct("Biscuits", 150, 2, 0.7, date.today() + timedelta(days=30))  # ✅
-tv = ShippableExpirableProduct("TV", 2000, 3, 3.0, date.today() + timedelta(days=90))  # ✅
-scratch_card = NonShippableExpirableProduct("Scratch Card", 50, 10, date.today() + timedelta(days=500))  # ✅
-out_of_stock = ShippableExpirableProduct("Empty Box", 10, 0, 0.1, date.today() + timedelta(days=10))  # ❌ no stock
+expired_cheese = ShippableExpirableProduct("Expired Cheese", 100, 5, 0.2, date(2023, 1, 1))  #  expired
+cheese = ShippableExpirableProduct("Cheese", 100, 5, 0.2, date.today() + timedelta(days=10))
+biscuits = ShippableExpirableProduct("Biscuits", 150, 2, 0.7, date.today() + timedelta(days=30))
+tv = ShippableExpirableProduct("TV", 2000, 3, 3.0, date.today() + timedelta(days=90))
+scratch_card = NonShippableExpirableProduct("Scratch Card", 50, 10, date.today() + timedelta(days=500))
+out_of_stock = ShippableExpirableProduct("Empty Box", 10, 0, 0.1, date.today() + timedelta(days=10))  #  no stock
 
 # --- Define Customer ---
 customer = Customer("Ahmed", 10000)
@@ -44,9 +44,9 @@ products_to_test = [
     (biscuits, 10),
 ]
 
-for product, qty in products_to_test:
+for product, quantity in products_to_test:
     try:
-        cart.add(product, qty)
+        cart.add(product, quantity)
     except Exception as e:
         print(f"[Warning] {product.name} not added: {e}")
 
