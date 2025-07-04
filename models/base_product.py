@@ -15,9 +15,8 @@ class Product (ABC):
 	@abstractmethod
 	def is_expired(self) -> bool:
 
-		return False
+		pass
 
 	@abstractmethod
-	def is_shappable(self) -> bool:
-
-		return False
+	def is_shippable(self) -> bool:
+		pass
