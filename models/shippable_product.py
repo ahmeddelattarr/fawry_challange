@@ -1,4 +1,6 @@
+"""mixin for thr shippable products"""
 class shippable:
+
 	def __init__(self,weight) :
 		self.weight = weight
 
