@@ -5,7 +5,7 @@ from models.expirable_product import ExpirableProduct
 from models.shippable_product import Shippable
 from services.checkout import CheckoutService
 
-# Concrete Hybrid Product
+
 class ShippableExpirableProduct(ExpirableProduct, Shippable):
     def __init__(self, name, price, quantity, weight, expiry_date):
         ExpirableProduct.__init__(self, name, price, quantity, expiry_date)
@@ -14,12 +14,12 @@ class ShippableExpirableProduct(ExpirableProduct, Shippable):
     def is_shippable(self):
         return True
 
-# Non-shippable & non-expired
+
 class NonShippableExpirableProduct(ExpirableProduct):
     def is_shippable(self):
         return False
 
-# --- Define Products ---
+# Products
 expired_cheese = ShippableExpirableProduct("Expired Cheese", 100, 5, 0.2, date(2023, 1, 1))  #  expired
 cheese = ShippableExpirableProduct("Cheese", 100, 5, 0.2, date.today() + timedelta(days=10))
 biscuits = ShippableExpirableProduct("Biscuits", 150, 2, 0.7, date.today() + timedelta(days=30))
@@ -50,7 +50,7 @@ for product, quantity in products_to_test:
     except Exception as e:
         print(f"[Warning] {product.name} not added: {e}")
 
-# --- Checkout ---
+# Checkout
 checkout_service = CheckoutService()
 try:
     checkout_service.checkout(customer, cart)

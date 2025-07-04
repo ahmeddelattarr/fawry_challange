@@ -5,6 +5,7 @@ class Cart:
 
 	def add(self,product,quantity):
 		try:
+			# TODO: add negitave quantity validation
 			if product.is_expired():
 				print(f"[Warning] {product.name} is expired. Skipping.")
 				return
